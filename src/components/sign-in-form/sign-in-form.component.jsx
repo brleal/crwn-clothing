@@ -41,6 +41,17 @@ const SignInForm = () => {
 
         } catch (error) {
 
+            switch (error.code) {
+                case 'auth/wrong-password':
+                    alert('Senha incorreta');
+                    break;
+                case 'auth/user-not-found':
+                    alert('Usuário não associado a este email');
+                    break;
+                default:
+                    console.log(error);
+            }
+
         }
 
     };
@@ -77,7 +88,7 @@ const SignInForm = () => {
                 {/*estilo: aula 102, 7:40*/}
                 <div className='buttons-container'>
                     <Button type='submit'>Logar</Button>
-                    <Button buttonType='google' onClick={signInWithGoogle}>Logar com Google</Button>
+                    <Button type='button' buttonType='google' onClick={signInWithGoogle}>Logar com Google</Button>
                 </div>
             </form>
         </div>
