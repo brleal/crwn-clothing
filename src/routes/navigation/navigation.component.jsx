@@ -7,13 +7,7 @@ import './navigation.styles.scss';
 
 const Navigation = () => {
 
-    const {currentUser, setCurrentUser} = useContext(UserContext);
-
-    const signOutHandler = async () => {
-        await res = await signOutUser();
-        console.log(res);
-        setCurrentUser(null);
-    }
+    const {currentUser} = useContext(UserContext);
 
     //console.log(currentUser);
 
@@ -33,9 +27,9 @@ const Navigation = () => {
                         ) : (<Link className='nav-link' to='/auth'>SIGN IN</Link>
                         )
                     }
-                    <Link className='nav-link' to='/auth'>
+                    {/*                    <Link className='nav-link' to='/auth'>
                         SIGN IN
-                    </Link>
+                    </Link>*/}
                 </div>
             </div>
             <Outlet/>
