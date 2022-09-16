@@ -9,7 +9,7 @@ import {
 
 import './sign-in-form.styles.scss'
 
-import {UserContext} from '../../context/user.context';
+import {UserContext} from '../../contexts/user.context';
 
 const defaultFormFields = {
     email: '',

@@ -5,7 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
 
-import {UserProvider} from './context/user.context';
+import {UserProvider} from './contexts/user.context';
+import {ProductsProvider} from './contexts/products.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +14,9 @@ root.render(
         <BrowserRouter>
             {/*qualquer contexto da aplicacao pode acessar as informacoes do usuário dentro de UserProvider*/}
             <UserProvider>
-                <App/>
+                <ProductsProvider>
+                    <App/>
+                </ProductsProvider>
             </UserProvider>
         </BrowserRouter>
     </React.StrictMode>
