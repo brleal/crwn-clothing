@@ -7,6 +7,7 @@ import {BrowserRouter} from 'react-router-dom';
 
 import {UserProvider} from './contexts/user.context';
 import {ProductsProvider} from './contexts/products.context';
+import {CartProvider} from './contexts/cart.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,7 +16,9 @@ root.render(
             {/*qualquer contexto da aplicacao pode acessar as informacoes do usuário dentro de UserProvider*/}
             <UserProvider>
                 <ProductsProvider>
-                    <App/>
+                    <CartProvider>
+                        <App/>
+                    </CartProvider>
                 </ProductsProvider>
             </UserProvider>
         </BrowserRouter>
